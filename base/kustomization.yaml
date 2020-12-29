@@ -1,0 +1,9 @@
+commonLabels:
+  app: reactioncommerce
+  heritage: kustomize
+  release: edge
+
+namespace: demandcluster
+
+resources:
+- deployments.yaml

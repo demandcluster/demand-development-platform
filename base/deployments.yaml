@@ -1,0 +1,69 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    component: hydra
+  name: hydra
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+        - name: hydra
+          image: oryd/hydra
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    component: api
+  name: api
+spec:
+  replicas: 2
+  template:
+    spec:
+      containers:
+        - name: reaction
+          image: reactioncommerce/reaction
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    component: identity
+  name: identity
+spec:
+  replicas: 2
+  template:
+    spec:
+      containers:
+        - name: reaction-identity
+          image: reactioncommerce/identity
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    component: admin
+  name: admin
+spec:
+  replicas: 2
+  template:
+    spec:
+      containers:
+        - name: reaction-admin
+          image: reactioncommerce/reaction-admin
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    component: storefront
+  name: storefront
+spec:
+  replicas: 2
+  template:
+    spec:
+      containers:
+        - name: example-storefront
+          image: reactioncommerce/example-storefront

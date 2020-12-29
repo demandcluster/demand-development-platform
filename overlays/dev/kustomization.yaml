@@ -1,0 +1,27 @@
+images:
+- name: oryd/hydra
+  newName: reaction-commerce/reaction-hydra
+  newTag: latest
+- name: reactioncommerce/reaction
+  newTag: latest
+- name: reactioncommerce/reaction-identity
+  newTag: latest
+- name: reactioncommerce/reaction-admin
+  newTag: latest
+- name: reactioncommerce/example-storefront
+  newTag: latest
+
+replicas:
+- name: api
+  count: 1
+- name: identity
+  count: 1
+- name: admin
+  count: 1
+- name: storefront
+  count: 1
+
+namePrefix: dev-
+
+resources:
+- ../../base

@@ -1,0 +1,16 @@
+images:
+- name: oryd/hydra
+  newTag: 1.9.0
+- name: reactioncommerce/reaction
+  newTag: 3.11.0
+- name: reactioncommerce/reaction-identity
+  newTag: 3.3.0
+- name: reactioncommerce/reaction-admin
+  newTag: 3.0.0-beta.11
+- name: reactioncommerce/example-storefront
+  newTag: 4.0.0
+
+namePrefix: live-
+
+resources:
+- ../../base

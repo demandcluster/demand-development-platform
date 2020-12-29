@@ -1,0 +1,6 @@
+namePrefix: demandcluster-
+
+resources:
+- ./overlays/dev
+- ./overlays/test
+- ./overlays/live
