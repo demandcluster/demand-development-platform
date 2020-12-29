@@ -73,9 +73,9 @@ metadata:
 spec:
   tls:
   - hosts:
-    - identity.example.com
+    - identity.domain.example
   rules:
-  - host: identity.example.com
+  - host: identity.domain.example
     http:
       paths:
       - pathType: Prefix
@@ -95,9 +95,9 @@ metadata:
 spec:
   tls:
   - hosts:
-    - admin.example.com
+    - admin.domain.example
   rules:
-  - host: admin.example.com
+  - host: admin.domain.example
     http:
       paths:
       - pathType: Prefix
@@ -117,9 +117,9 @@ metadata:
 spec:
   tls:
   - hosts:
-    - storefront.example.domain
+    - storefront.domain.example
   rules:
-  - host: storefront.example.domain
+  - host: storefront.domain.example
     http:
       paths:
       - pathType: Prefix
