@@ -12,13 +12,13 @@ images:
   newTag: latest
 
 replicas:
-- name: api
+- name: api-deployment
   count: 1
-- name: identity
+- name: identity-deployment
   count: 1
-- name: admin
+- name: admin-deployment
   count: 1
-- name: storefront
+- name: storefront-deployment
   count: 1
 
 namePrefix: dev-
