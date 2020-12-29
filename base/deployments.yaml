@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: hydra-deployment
   labels:
     component: hydra
-  name: hydra-deployment
 spec:
   replicas: 1
   selector:
@@ -24,9 +24,9 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: api-deployment
   labels:
     component: api
-  name: api-deployment
 spec:
   replicas: 2
   selector:
@@ -45,9 +45,9 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: identity-deployment
   labels:
     component: identity
-  name: identity-deployment
 spec:
   replicas: 2
   selector:
@@ -66,9 +66,9 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: admin-deployment
   labels:
     component: admin
-  name: admin-deployment
 spec:
   replicas: 2
   selector:
@@ -87,9 +87,9 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: storefront-deployment
   labels:
     component: storefront
-  name: storefront-deployment
 spec:
   replicas: 2
   selector:
