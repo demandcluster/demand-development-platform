@@ -8,3 +8,4 @@ namespace: demandcluster
 resources:
 - deployments.yaml
 - services.yaml
+- ingresses.yaml

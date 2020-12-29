@@ -1,0 +1,131 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hydra-frontend
+  labels:
+    component: hydra
+spec:
+  tls:
+  - hosts:
+    - hydra.domain.example
+  rules:
+  - host: hydra.domain.example
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: demandcluster-hydra-public
+            port:
+              name: hydra-public
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: demandcluster-hydra-admin
+  labels:
+    component: hydra
+spec:
+  tls:
+  - hosts:
+    - private.domain.example
+  rules:
+  - host: private.domain.example
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: demandcluster-hydra-admin
+            port:
+              name: hydra-admin
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: api-ingress
+  labels:
+    component: api
+spec:
+  tls:
+  - hosts:
+    - api.domain.example
+  rules:
+  - host: api.domain.example
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: demandcluster-api
+            port:
+              name: api
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: identity-ingress
+  labels:
+    component: identity
+spec:
+  tls:
+  - hosts:
+    - identity.example.com
+  rules:
+  - host: identity.example.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: demandcluster-identity
+            port:
+              name: identity
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: admin-ingress
+  labels:
+    component: admin
+spec:
+  tls:
+  - hosts:
+    - admin.example.com
+  rules:
+  - host: admin.example.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: demandcluster-admin
+            port:
+              name: admin
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: storefront-ingress
+  labels:
+    component: web
+spec:
+  tls:
+  - hosts:
+    - storefront.example.domain
+  rules:
+  - host: storefront.example.domain
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: demandcluster-storefront
+            port:
+              name: storefront

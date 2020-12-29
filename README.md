@@ -16,3 +16,4 @@ Clone repo and run `kustomize build` from the root or a specific directory to ge
 - [ ] Disable TLS in dev for cert-free local development
 - [ ] Add secrets and configmaps
 - [ ] [Get Snapshot Metrics from the Hydra Service](https://www.ory.sh/hydra/docs/reference/api#get-snapshot-metrics-from-the-hydra-service)
+- [ ] Disable hydra admin ingress for live environments

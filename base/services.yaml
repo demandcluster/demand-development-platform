@@ -11,11 +11,11 @@ spec:
     release: edge
   ports:
   - port: 4444
-    name: public
+    name: hydra-public
   - port: 4445
-    name: admin
+    name: hydra-admin
   - port: 5555
-    name: tokens
+    name: hydra-tokens
 ---
 apiVersion: v1
 kind: Service
