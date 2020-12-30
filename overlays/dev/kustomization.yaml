@@ -22,6 +22,7 @@ replicas:
   count: 1
 
 namePrefix: dev-
+namespace: demandcluster-dev
 
 resources:
 - ../../base
