@@ -1,3 +1,88 @@
+configMapGenerator:
+- name: hydra-env-config
+  literals:
+  - OAUTH2_EXPOSE_INTERNAL_ERRORS=true
+  - OIDC_SUBJECT_IDENTIFIERS_ENABLED=true
+  - SERVE_PUBLIC_CORS_ALLOWED_ORIGINS=http://reaction-admin:4080
+  - SERVE_PUBLIC_CORS_ENABLED=true
+  - URLS_CONSENT=http://reaction-identity:4100/consent
+  - URLS_ERROR=http://reaction-identity:4100/account/oauth-error
+  - URLS_LOGIN=http://reaction-identity:4100/login
+  - URLS_LOGOUT=http://reaction-identity:4100/logout
+  - URLS_SELF_ISSUER=http://reaction-hydra
+- name: api-env-config
+  literals:
+  - ROOT_URL=http://reaction-api:3000
+- name: identity-env-config
+  literals:
+  - API_URL=http://reaction-api:3000/graphql
+  - HYDRA_ADMIN_URL=http://reaction-hydra:4445
+  - HYDRA_TOKEN_URL=http://reaction-hydra:4444/oauth2/token
+  - LOG_LEVEL=debug
+  - METEOR_DISABLE_OPTIMISTIC_CACHING=1
+  - METEOR_WATCH_POLLING_INTERVAL_MS=10000
+  - OAUTH2_CLIENT_DOMAINS=http://reaction-storefront:4000
+  - PORT=4100
+  - ROOT_URL=http://reaction-identity:4100
+- name: admin-env-config
+  literals:
+  - METEOR_DISABLE_OPTIMISTIC_CACHING=1
+  - METEOR_WATCH_POLLING_INTERVAL_MS=10000
+  - NODE_ENV=development
+  - OAUTH2_ADMIN_URL=http://reaction-hydra:4445
+  - OAUTH2_IDP_PUBLIC_CHANGE_PASSWORD_URL=http://reaction-identity:4100/account/change-password?email=EMAIL&from=FROM
+  - OAUTH2_PUBLIC_URL=http://reaction-hydra:4444
+  - PORT=4080
+  - PUBLIC_FILES_BASE_URL=http://reaction-api:3000
+  - PUBLIC_GRAPHQL_API_URL_HTTP=http://reaction-api:3000/graphql
+  - PUBLIC_GRAPHQL_API_URL_WS=ws://reaction-api:3000/graphql
+  - PUBLIC_I18N_BASE_URL=http://reaction-api:3000
+  - PUBLIC_STOREFRONT_HOME_URL=http://reaction-storefront:4000
+  - ROOT_URL=http://reaction-admin:4080
+- name: storefront-env-config
+  literals:
+  - CANONICAL_URL=http://reaction-storefront:4000
+  - ENABLE_SPA_ROUTING=true
+  - EXTERNAL_GRAPHQL_URL=http://reaction-api:3000/graphql
+  - INTERNAL_GRAPHQL_URL=http://reaction-api:3000/graphql
+  - OAUTH2_ADMIN_PORT=4445
+  - OAUTH2_ADMIN_URL=http://reaction-hydra:4445
+  - OAUTH2_AUTH_URL=http://reaction-hydra:4444/oauth2/auth
+  - OAUTH2_CLIENT_ID=example-storefront
+  - OAUTH2_PUBLIC_LOGOUT_URL=http://reaction-hydra:4444/oauth2/sessions/logout
+  - OAUTH2_HOST=reaction-hydra
+  - OAUTH2_IDP_PUBLIC_CHANGE_PASSWORD_URL=http://reaction-identity:4100/account/change-password?email=EMAIL&from=FROM
+  - OAUTH2_IDP_HOST_URL=http://reaction-identity:4100
+  - OAUTH2_TOKEN_URL=http://reaction-hydra:4444/oauth2/token
+  - PORT=4000
+  - SEGMENT_ANALYTICS_SKIP_MINIMIZE=true
+  - SEGMENT_ANALYTICS_WRITE_KEY=ENTER_KEY_HERE
+  - STRIPE_PUBLIC_API_KEY=ENTER_STRIPE_PUBLIC_KEY_HERE
+  - BUILD_GRAPHQL_URL=http://localhost:3000/graphql
+
+secretGenerator:
+- name: hydra-env-secrets
+  literals:
+  - DSN=postgres://hydra:changeme@reaction-postgresql-headless:5432/hydra?sslmode=disable
+  - OIDC_SUBJECT_IDENTIFIERS_PAIRWISE_SALT=youReallyNeedToChangeThis
+  - SECRETS_SYSTEM=youReallyNeedToChangeThis
+- name: api-env-secrets
+  literals:
+  - MONGO_URL=mongodb://root:reaction-mongodb-headless:27017/reaction?replicaSet=rs0&authSource=admin
+  - STRIPE_API_KEY=YOUR_PRIVATE_STRIPE_API_KEY
+- name: identity-env-secrets
+  literals:
+  - MONGO_OPLOG_URL=mongodb://reaction-mongodb-headless:27017/local
+  - MONGO_URL=mongodb://reaction-mongodb-headless:27017/reaction
+- name: admin-env-secrets
+  literals:
+  - MONGO_OPLOG_URL=mongodb://reaction-mongodb-headless:27017/local
+  - MONGO_URL=mongodb://reaction-mongodb-headless:27017/reaction
+- name: storefront-env-secrets
+  literals:
+  - OAUTH2_CLIENT_SECRET=CHANGEME
+  - SESSION_SECRET=CHANGEME
+
 images:
 - name: oryd/hydra
   newName: reaction-commerce/reaction-hydra
