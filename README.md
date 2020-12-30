@@ -15,5 +15,10 @@ Clone repo and run `kustomize build` from the root or a specific directory to ge
 - [ ] Expose ports for remote inspection in dev/test
 - [ ] Disable TLS in dev for cert-free local development
 - [ ] Add secrets and configmaps
-- [ ] [Get Snapshot Metrics from the Hydra Service](https://www.ory.sh/hydra/docs/reference/api#get-snapshot-metrics-from-the-hydra-service)
+- [ ] [Get Snapshot Metrics from the Hydra Service][1]
 - [ ] Disable hydra admin ingress for live environments
+- [ ] Consider [Populate a Volume with data stored in a ConfigMap][2]
+
+
+[1]: https://www.ory.sh/hydra/docs/reference/api#get-snapshot-metrics-from-the-hydra-service
+[2]: https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/#populate-a-volume-with-data-stored-in-a-configmap
