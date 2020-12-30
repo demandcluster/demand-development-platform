@@ -1,3 +1,9 @@
+patches:
+- target:
+    kind: Deployment
+    name: hydra-deployment
+  path: patches/deployment_hydra_force_insecure.yaml
+
 configMapGenerator:
 - name: hydra-env-config
   files:

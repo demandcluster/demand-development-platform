@@ -1,0 +1,8 @@
+- op: add
+  path: /spec/template/spec/args
+  value:
+    - serve
+    - all
+    - --dangerous-force-http
+    - --dangerous-allow-insecure-redirect-urls
+    - http://reaction-storefront:4000/callback
