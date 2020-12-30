@@ -16,15 +16,15 @@ spec:
       containers:
       - name: hydra
         image: oryd/hydra
-      ports:
-      - containerPort: 4444
-      - containerPort: 4445
-      - containerPort: 5555
-      envFrom:
-      - secretRef:
-          name: hydra-env-secrets
-      - configMapRef:
-          name: hydra-env-config
+        ports:
+        - containerPort: 4444
+        - containerPort: 4445
+        - containerPort: 5555
+        envFrom:
+        - secretRef:
+            name: hydra-env-secrets
+        - configMapRef:
+            name: hydra-env-config
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -44,13 +44,13 @@ spec:
       containers:
       - name: reaction
         image: reactioncommerce/reaction
-      ports:
-      - containerPort: 3000
-      envFrom:
-      - secretRef:
-          name: api-env-secrets
-      - configMapRef:
-          name: api-env-config
+        ports:
+        - containerPort: 3000
+        envFrom:
+        - secretRef:
+            name: api-env-secrets
+        - configMapRef:
+            name: api-env-config
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -70,13 +70,13 @@ spec:
       containers:
       - name: reaction-identity
         image: reactioncommerce/identity
-      ports:
-      - containerPort: 4100
-      envFrom:
-      - secretRef:
-          name: identity-env-secrets
-      - configMapRef:
-          name: identity-env-config
+        ports:
+        - containerPort: 4100
+        envFrom:
+        - secretRef:
+            name: identity-env-secrets
+        - configMapRef:
+            name: identity-env-config
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -96,13 +96,13 @@ spec:
       containers:
       - name: reaction-admin
         image: reactioncommerce/reaction-admin
-      ports:
-      - containerPort: 4080
-      envFrom:
-      - secretRef:
-          name: admin-env-secrets
-      - configMapRef:
-          name: admin-env-config
+        ports:
+        - containerPort: 4080
+        envFrom:
+        - secretRef:
+            name: admin-env-secrets
+        - configMapRef:
+            name: admin-env-config
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -122,10 +122,10 @@ spec:
       containers:
       - name: example-storefront
         image: reactioncommerce/example-storefront
-      ports:
-      - containerPort: 4000
-      envFrom:
-      - secretRef:
-          name: storefront-env-secrets
-      - configMapRef:
-          name: storefront-env-config
+        ports:
+        - containerPort: 4000
+        envFrom:
+        - secretRef:
+            name: storefront-env-secrets
+        - configMapRef:
+            name: storefront-env-config
