@@ -2,14 +2,14 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hydra-deployment
-  labels:
-    component: hydra
+  # labels:
+  #   component: hydra
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: demandcluster
-      component: hydra
+      # component: hydra
       release: edge
   template:
     spec:
@@ -28,7 +28,7 @@ spec:
       initContainers:
       - name: hydra-migrate
         image: oryd/hydra
-        args:
+        command:
           - migrate
           - sql
           - -e
@@ -43,14 +43,14 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: api-deployment
-  labels:
-    component: api
+  # labels:
+  #   component: api
 spec:
   replicas: 2
   selector:
     matchLabels:
       app: demandcluster
-      component: api
+      # component: api
       release: edge
   template:
     spec:
@@ -69,14 +69,14 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: identity-deployment
-  labels:
-    component: identity
+  # labels:
+  #   component: identity
 spec:
   replicas: 2
   selector:
     matchLabels:
       app: demandcluster
-      component: identity
+      # component: identity
       release: edge
   template:
     spec:
@@ -95,14 +95,14 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: admin-deployment
-  labels:
-    component: admin
+  # labels:
+  #   component: admin
 spec:
   replicas: 2
   selector:
     matchLabels:
       app: demandcluster
-      component: admin
+      # component: admin
       release: edge
   template:
     spec:
@@ -121,14 +121,14 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: storefront-deployment
-  labels:
-    component: storefront
+  # labels:
+  #   component: storefront
 spec:
   replicas: 2
   selector:
     matchLabels:
       app: demandcluster
-      component: storefront
+      # component: storefront
       release: edge
   template:
     spec:
