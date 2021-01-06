@@ -5,6 +5,7 @@ Kustomize files for deploying the open source Reaction Commerce platform on top 
 ## Requirements
 
 - [Kustomize](https://kubernetes-sigs.github.io/kustomize/)
+- [Kubectl](https://kubectl.docs.kubernetes.io/installation/)
 
 ## Usage
 
