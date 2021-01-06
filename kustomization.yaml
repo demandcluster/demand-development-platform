@@ -1,6 +1,6 @@
 namePrefix: demandcluster-
 
 resources:
+- ./overlays/community
 - ./overlays/dev
-- ./overlays/test
-- ./overlays/live
+- ./overlays/enterprise
