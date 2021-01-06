@@ -16,6 +16,7 @@ kustomize build | kubectl apply -f -
 
 ## Todo
 
+- [ ] Integrate [MongoDB Kubernetes Operator](https://code.habd.as/mirrors/mongodb-kubernetes-operator)
 - [ ] Expose ports for remote inspection in dev/test
 - [x] Disable TLS in dev for cert-free local development
 - [x] Add secrets and configmaps
