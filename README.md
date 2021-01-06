@@ -13,8 +13,8 @@ Clone repo and run `kustomize build` from the root or a specific directory to ge
 ## Todo
 
 - [ ] Expose ports for remote inspection in dev/test
-- [ ] Disable TLS in dev for cert-free local development
-- [ ] Add secrets and configmaps
+- [x] Disable TLS in dev for cert-free local development
+- [x] Add secrets and configmaps
 - [ ] [Get Snapshot Metrics from the Hydra Service][1]
 - [ ] Disable hydra admin ingress for live environments
 - [ ] Consider [Populate a Volume with data stored in a ConfigMap][2]

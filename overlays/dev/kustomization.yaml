@@ -1,8 +1,13 @@
 patches:
-- target:
+- path: patches/deployment_hydra_force_insecure.yaml
+  target:
     kind: Deployment
+    namespace: demandcluster
     name: hydra-deployment
-  path: patches/deployment_hydra_force_insecure.yaml
+- path: patches/ingress_disable_tls.yaml
+  target:
+    kind: Ingress
+    namespace: demandcluster
 
 configMapGenerator:
 - name: hydra-env-config
