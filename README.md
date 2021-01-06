@@ -8,7 +8,11 @@ Kustomize files for deploying the open source Reaction Commerce platform on top 
 
 ## Usage
 
-Clone repo and run `kustomize build` from the root or a specific directory to generate raw YAMLs for CI pipelines.
+Clone repo and run `kustomize build` from the root or a specific directory to generate raw YAMLs. Apply build output directly to cluster:
+
+```sh
+kustomize build | kubectl apply -f -
+```
 
 ## Todo
 
