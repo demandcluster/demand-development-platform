@@ -1,0 +1,21 @@
+# 1 of 2 mutually exclusive ways to set-up Postgres Operator
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgres-operator
+data:
+  # additional_secret_mount: "some-secret-name"
+  # additional_secret_mount_path: "/some/dir"
+  api_port: "5432"
+
+# 2 of 2 mutually exclusive ways to set-up Postgres Operator
+# apiVersion: "acid.zalan.do/v1"
+# kind: OperatorConfiguration
+# metadata:
+#   name: postgresql-operator-default-configuration
+# configuration:
+#   kubernetes:
+#     cluster_domain: cluster.local
+#     cluster_labels:
+#       app: reactioncommerce
+#     # cluster_name_label: cluster-name

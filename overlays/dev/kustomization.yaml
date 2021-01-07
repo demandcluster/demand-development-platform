@@ -77,3 +77,6 @@ namespace: demandcluster-dev
 
 resources:
 - ../../base
+
+components:
+- ../../components/postgresql_operator
