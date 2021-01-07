@@ -28,7 +28,7 @@ spec:
       initContainers:
       - name: hydra-migrate
         image: oryd/hydra
-        command:
+        args:
           - migrate
           - sql
           - -e
@@ -108,7 +108,7 @@ spec:
     spec:
       containers:
       - name: reaction-admin
-        image: reactioncommerce/reaction-admin
+        image: reactioncommerce/admin
         ports:
         - containerPort: 4080
         envFrom:
