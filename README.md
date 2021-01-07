@@ -50,6 +50,7 @@ ingress.networking.k8s.io/demandcluster-dev-storefront-ingress created
 
 - [ ] Ingegrate [Postgres Operator](https://github.com/zalando/postgres-operator)
 - [ ] Integrate [MongoDB Operator](https://github.com/mongodb/mongodb-kubernetes-operator)
+- [ ] Validate [CLI-based Hydra token creation](https://github.com/reactioncommerce/hydra-token)
 - [ ] Expose ports for remote inspection in dev/test
 - [x] Disable TLS in dev for cert-free local development
 - [x] Add secrets and configmaps
