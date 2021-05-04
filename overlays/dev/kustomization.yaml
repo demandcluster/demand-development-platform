@@ -52,7 +52,7 @@ secretGenerator:
 images:
 - name: oryd/hydra
   newName: reactioncommerce/reaction-hydra
-  newTag: latest
+  newTag: v1.2.3
 - name: reactioncommerce/reaction
   newTag: latest
 - name: reactioncommerce/identity
