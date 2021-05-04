@@ -51,16 +51,16 @@ secretGenerator:
 
 images:
 - name: oryd/hydra
-  newName: reaction-commerce/reaction-hydra
+  newName: reactioncommerce/reaction-hydra
   newTag: latest
 - name: reactioncommerce/reaction
   newTag: latest
-- name: reactioncommerce/reaction-identity
+- name: reactioncommerce/identity
   newTag: latest
-- name: reactioncommerce/reaction-admin
+- name: reactioncommerce/admin
   newTag: latest
 - name: reactioncommerce/example-storefront
-  newTag: latest
+  newTag: trunk
 
 replicas:
 - name: api-deployment
