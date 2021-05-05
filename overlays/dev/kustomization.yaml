@@ -51,10 +51,10 @@ secretGenerator:
 
 images:
 - name: oryd/hydra
-  newTag: latest
+  newTag: v1.0.8
 - name: reactioncommerce/reaction
   newTag: latest
-- name: reactioncommerce/reaction-identity
+- name: reactioncommerce/identity
   newTag: latest
 - name: reactioncommerce/admin
   newTag: 3.0.0-beta.13

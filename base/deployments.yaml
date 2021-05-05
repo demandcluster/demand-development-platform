@@ -25,19 +25,19 @@ spec:
             name: hydra-env-secrets
         - configMapRef:
             name: hydra-env-config
-      initContainers:
-      - name: hydra-migrate
-        image: oryd/hydra
-        command:
-          - migrate
-          - sql
-          - -e
-          - -y
-        envFrom:
-          - secretRef:
-              name: hydra-env-secrets
-          - configMapRef:
-              name: hydra-env-config
+#      initContainers:
+#      - name: hydra-migrate
+#       image: oryd/hydra
+#        command:
+#          - migrate
+#          - sql
+#          - -e
+#          - -y
+#        envFrom:
+#          - secretRef:
+#              name: hydra-env-secrets
+#          - configMapRef:
+#              name: hydra-env-config
 ---
 apiVersion: apps/v1
 kind: Deployment
