@@ -108,7 +108,7 @@ spec:
     spec:
       containers:
       - name: reaction-admin
-        image: reactioncommerce/reaction-admin
+        image: reactioncommerce/admin
         ports:
         - containerPort: 4080
         envFrom:
@@ -124,7 +124,7 @@ metadata:
   # labels:
   #   component: storefront
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: demandcluster
@@ -142,3 +142,30 @@ spec:
             name: storefront-env-secrets
         - configMapRef:
             name: storefront-env-config
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongodb-deployment
+  # labels:
+  #   component: mongodb
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: demandcluster
+      # component: mongodb
+      release: edge
+  template:
+    spec:
+      containers:
+      - name: mongodb
+        image: mongo:bionic
+        ports:
+        - containerPort: 27017
+        envFrom:
+        - secretRef:
+            name: mongo-env-secrets
+        - configMapRef:
+            name: mongo-env-config
+

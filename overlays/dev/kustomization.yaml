@@ -51,16 +51,15 @@ secretGenerator:
 
 images:
 - name: oryd/hydra
-  newName: reaction-commerce/reaction-hydra
   newTag: latest
 - name: reactioncommerce/reaction
   newTag: latest
 - name: reactioncommerce/reaction-identity
   newTag: latest
-- name: reactioncommerce/reaction-admin
-  newTag: latest
+- name: reactioncommerce/admin
+  newTag: 3.0.0-beta.13
 - name: reactioncommerce/example-storefront
-  newTag: latest
+  newTag: 4.0.2
 
 replicas:
 - name: api-deployment
@@ -77,3 +76,5 @@ namespace: demandcluster-dev
 
 resources:
 - ../../base
+- namespace.yaml
+
